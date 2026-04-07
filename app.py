@@ -13,7 +13,14 @@ def get_browser():
     global _playwright, _browser
     if _browser is None:
         _playwright = sync_playwright().start()
-        _browser = _playwright.chromium.launch(headless=True)
+        _browser = _playwright.chromium.launch(
+            headless=True,
+            args=[
+                "--no-sandbox",
+                "--disable-setuid-sandbox",
+                "--disable-dev-shm-usage",
+            ],
+        )
     return _browser
 
 

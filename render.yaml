@@ -3,3 +3,4 @@ services:
     name: screenshot-api
     runtime: docker
     dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
