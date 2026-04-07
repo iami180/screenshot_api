@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: screenshot-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
